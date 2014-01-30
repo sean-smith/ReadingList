@@ -1,12 +1,7 @@
+// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
 
-
-/**
- * Reading List
- * This allows someone to easily bookmark a page that they can then read later
- *
- * @type {string}
- */
- 
 // Search the bookmarks when entering the search keyword.
 $(function() {
   $('#search').change(function() {
@@ -14,8 +9,6 @@ $(function() {
      dumpBookmarks($('#search').val());
   });
 });
-
-
 // Traverse the bookmark tree, and print the folder and nodes.
 function dumpBookmarks(query) {
   var bookmarkTreeNodes = chrome.bookmarks.getTree(
@@ -41,7 +34,6 @@ function dumpNode(bookmarkNode, query) {
     var anchor = $('<a>');
     anchor.attr('href', bookmarkNode.url);
     anchor.text(bookmarkNode.title);
-    
     /*
      * When clicking on a bookmark in the extension, a new tab is fired with
      * the bookmark url.
@@ -49,8 +41,6 @@ function dumpNode(bookmarkNode, query) {
     anchor.click(function() {
       chrome.tabs.create({url: bookmarkNode.url});
     });
-    
-    
     var span = $('<span>');
     var options = bookmarkNode.children ?
       $('<span>[<a href="#" id="addlink">Add</a>]</span>') :
