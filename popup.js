@@ -1,13 +1,12 @@
-// Copyright (c) 2012 The Chromium Authors. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
+
 
 /**
- * Global variable containing the query we'd like to pass to Flickr. In this
- * case, kittens!
+ * Reading List
+ * This allows someone to easily bookmark a page that they can then read later
  *
  * @type {string}
  */
+ 
 var QUERY = 'kittens';
 
 var kittenGenerator = {
@@ -20,6 +19,7 @@ var kittenGenerator = {
    * @type {string}
    * @private
    */
+   
   searchOnFlickr_: 'https://secure.flickr.com/services/rest/?' +
       'method=flickr.photos.search&' +
       'api_key=90485e931f687a9b9c2a66bf58a3861a&' +
